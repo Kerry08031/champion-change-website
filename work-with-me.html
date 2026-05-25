@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work With Me — Champion Change Wellness Coaching</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --forest:      #3D5A48;
+    --forest-deep: #2A3D31;
+    --sage:        #7D9E78;
+    --sage-light:  #EDF2EC;
+    --sage-mid:    #D4E2D2;
+    --sky:         #A8C4D4;
+    --amber:       #C8883A;
+    --rose:        #E8B4AE;
+    --linen:       #FAF6EF;
+    --linen-mid:   #F4EDE3;
+    --linen-deep:  #EDE3D6;
+    --bark:        #3A3028;
+    --bark-light:  #7A6B60;
+    --white:       #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--white);
+    color: var(--bark);
+    line-height: 1.6;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* ─────────────────────────────
+     NAVIGATION
+  ───────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--sage-mid);
+    padding: 0 6%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  .nav-logo-l1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--forest);
+  }
+  .nav-logo-l2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--amber);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--bark-light);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--forest); }
+  .nav-links a.active { color: var(--forest); font-weight: 600; }
+
+  .nav-cta {
+    background: var(--sage) !important;
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 2px;
+    letter-spacing: 1.5px !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--forest) !important; color: var(--white) !important; }
+
+  /* ─────────────────────────────
+     SHARED TYPOGRAPHY
+  ───────────────────────────── */
+  .eyebrow {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 4vw, 50px);
+    font-weight: 600;
+    line-height: 1.05;
+    color: var(--forest-deep);
+    margin-bottom: 22px;
+  }
+  .section-title em { font-style: italic; color: var(--amber); }
+
+  .body-text {
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--bark-light);
+    margin-bottom: 18px;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 580px;
+    margin: 0 auto 60px;
+  }
+
+  .btn-primary {
+    background: var(--amber);
+    color: var(--white);
+    padding: 14px 30px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #b5742e; transform: translateY(-1px); }
+
+  .sage-rule {
+    width: 44px;
+    height: 2px;
+    background: var(--sage);
+    border-radius: 1px;
+    margin: 26px 0;
+  }
+
+  /* ─────────────────────────────
+     HERO — centred, no photo
+  ───────────────────────────── */
+  .hero {
+    margin-top: 68px;
+    background: var(--linen);
+    padding: 120px 8% 110px;
+    text-align: center;
+    border-bottom: 1px solid var(--linen-deep);
+  }
+
+  .hero-eyebrow {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 20px;
+  }
+
+  .hero-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 6vw, 78px);
+    font-weight: 600;
+    line-height: 1.02;
+    color: var(--forest-deep);
+    margin-bottom: 26px;
+  }
+
+  .hero-sub {
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 1.85;
+    color: var(--bark-light);
+    max-width: 560px;
+    margin: 0 auto 44px;
+  }
+
+  /* ─────────────────────────────
+     IS THIS YOU — two col
+  ───────────────────────────── */
+  .for-you {
+    background: var(--white);
+    padding: 100px 8%;
+  }
+
+  .for-you-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .for-you-left .eyebrow { display: block; }
+
+  .punchy-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .punchy-list li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--bark);
+    line-height: 1.4;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .punchy-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 6px;
+    height: 1px;
+    background: var(--sage);
+  }
+
+  .punchy-list li.soft {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12.5px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--bark-light);
+    line-height: 1.7;
+  }
+
+  .punchy-list li.closing {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--forest);
+    font-style: italic;
+    padding-left: 0;
+  }
+  .punchy-list li.closing::before { display: none; }
+
+  .imagine-card {
+    background: var(--forest);
+    border-radius: 4px;
+    padding: 48px 44px;
+    color: var(--linen);
+    position: sticky;
+    top: 88px;
+  }
+
+  .imagine-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--linen);
+    margin-bottom: 28px;
+    line-height: 1.15;
+  }
+
+  .imagine-card h3 em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .imagine-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .imagine-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 13px;
+    color: rgba(250,246,239,0.82);
+    line-height: 1.55;
+  }
+
+  .imagine-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(125,158,120,0.25);
+    border: 1px solid rgba(125,158,120,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .imagine-check svg { display: block; }
+
+  /* ─────────────────────────────
+     WHAT'S INCLUDED — sage-light
+  ───────────────────────────── */
+  .included {
+    background: var(--sage-light);
+    padding: 100px 8%;
+    border-top: 1px solid var(--sage-mid);
+    border-bottom: 1px solid var(--sage-mid);
+  }
+
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Last row: 2 cards centred */
+  .included-grid .inc-card:nth-child(4),
+  .included-grid .inc-card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .included-row-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 734px;
+    margin: 20px auto 0;
+  }
+
+  .inc-card {
+    background: var(--white);
+    border: 1px solid var(--sage-mid);
+    border-radius: 4px;
+    padding: 38px 30px;
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+  .inc-card:hover {
+    box-shadow: 0 8px 32px rgba(61,90,72,0.10);
+    transform: translateY(-3px);
+  }
+
+  .inc-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--sage-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .inc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--forest-deep);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .inc-body {
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--bark-light);
+  }
+
+  /* ─────────────────────────────
+     TRANSFORMATION — two cards
+  ───────────────────────────── */
+  .transformation {
+    background: var(--white);
+    padding: 100px 8%;
+  }
+
+  .transformation-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .transformation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 16px;
+  }
+
+  .trans-card {
+    border-radius: 4px;
+    padding: 48px 40px;
+  }
+
+  .trans-card-now {
+    background: var(--linen-mid);
+    border-top: 4px solid var(--amber);
+  }
+
+  .trans-card-future {
+    background: var(--sage-light);
+    border-top: 4px solid var(--sage);
+  }
+
+  .trans-label {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .trans-card-now .trans-label { color: var(--amber); }
+  .trans-card-future .trans-label { color: var(--sage); }
+
+  .trans-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .trans-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--bark);
+    line-height: 1.2;
+  }
+
+  .trans-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+
+  .trans-icon-x {
+    background: rgba(232,180,174,0.25);
+    color: var(--rose);
+  }
+
+  .trans-icon-check {
+    background: rgba(125,158,120,0.18);
+    color: var(--forest);
+  }
+
+  /* ─────────────────────────────
+     INVESTMENT — linen, centred
+  ───────────────────────────── */
+  .investment {
+    background: var(--linen);
+    padding: 100px 8%;
+    text-align: center;
+    border-top: 1px solid var(--linen-deep);
+    border-bottom: 1px solid var(--linen-deep);
+  }
+
+  .investment-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 6vw, 80px);
+    font-weight: 600;
+    color: var(--forest);
+    line-height: 1;
+    margin: 12px 0 16px;
+  }
+
+  .investment-sub {
+    font-size: 13px;
+    color: var(--bark-light);
+    margin-bottom: 8px;
+    line-height: 1.7;
+  }
+
+  .investment-note {
+    font-size: 11.5px;
+    color: var(--sage);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 36px;
+  }
+
+  /* ─────────────────────────────
+     BOOKING — sage-light
+  ───────────────────────────── */
+  .booking {
+    background: var(--sage-light);
+    padding: 100px 8%;
+    border-top: 1px solid var(--sage-mid);
+    border-bottom: 1px solid var(--sage-mid);
+  }
+
+  .booking-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .booking-embed {
+    background: var(--white);
+    border: 2px dashed var(--sage-mid);
+    border-radius: 8px;
+    padding: 60px 40px;
+    text-align: center;
+    margin-top: 44px;
+  }
+
+  .booking-embed-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-style: italic;
+    color: var(--sage);
+    margin-bottom: 14px;
+  }
+
+  .booking-embed-sub {
+    font-size: 12px;
+    color: var(--bark-light);
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+
+  .btn-amber-outline {
+    display: inline-block;
+    background: var(--amber);
+    color: var(--white);
+    padding: 12px 26px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-amber-outline:hover { background: #b5742e; transform: translateY(-1px); }
+
+  /* ─────────────────────────────
+     TESTIMONIALS — white
+  ───────────────────────────── */
+  .testimonials {
+    background: var(--white);
+    padding: 100px 8%;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .t-card {
+    background: var(--linen);
+    border: 1px solid var(--linen-mid);
+    border-radius: 4px;
+    padding: 34px 28px;
+  }
+
+  .t-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    line-height: 0.6;
+    color: var(--rose);
+    margin-bottom: 18px;
+    opacity: 0.6;
+  }
+
+  .t-text {
+    font-size: 12.5px;
+    line-height: 1.85;
+    color: var(--bark);
+    font-style: italic;
+    margin-bottom: 22px;
+  }
+
+  .t-name {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--forest);
+  }
+
+  .testimonials-note {
+    text-align: center;
+    font-size: 11px;
+    color: var(--bark-light);
+    margin-top: 28px;
+    font-style: italic;
+  }
+
+  /* ─────────────────────────────
+     FOOTER
+  ───────────────────────────── */
+  footer {
+    background: var(--forest-deep);
+    padding: 60px 8% 32px;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 56px;
+    max-width: 1100px;
+    margin: 0 auto 44px;
+  }
+
+  .footer-logo-l1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--linen);
+    line-height: 1.1;
+  }
+  .footer-logo-l2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--amber);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .footer-tagline {
+    font-size: 11.5px;
+    line-height: 1.75;
+    color: rgba(250,246,239,0.45);
+    max-width: 250px;
+  }
+
+  .footer-col h4 {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(250,246,239,0.30);
+    margin-bottom: 18px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a {
+    font-size: 12px;
+    color: rgba(250,246,239,0.50);
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--linen); }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(250,246,239,0.08);
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.5px;
+    color: rgba(250,246,239,0.30);
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-l1">Champion</span>
+    <span class="nav-logo-l2">Change</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="work-with-me.html" class="active">Work With Me</a></li>
+    <li><a href="#booking" class="nav-cta">Book your free Clarity Session</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Work With Me</p>
+  <h1 class="hero-headline">Your transformation starts here.</h1>
+  <p class="hero-sub">A 6-week 1:1 coaching experience designed to help you break free from all-or-nothing thinking and build habits that feel simple, sustainable, and empowering.</p>
+  <a href="#booking" class="btn-primary">Book your free Clarity Session</a>
+</section>
+
+<!-- IS THIS YOU -->
+<section class="for-you">
+  <div class="for-you-inner">
+
+    <div class="for-you-left">
+      <span class="eyebrow">Is This You?</span>
+      <h2 class="section-title">You're ambitious.<br>Driven. Capable.</h2>
+
+      <ul class="punchy-list">
+        <li>You do everything for everyone… except yourself.</li>
+        <li>On the outside, you look like you have it all together.</li>
+        <li>On the inside, you're exhausted from trying to "do it right."</li>
+        <li>You've tried routines, programs, planners, resets — but nothing sticks.</li>
+        <li class="soft">Not because you're lazy or unmotivated.</li>
+        <li class="soft">But because you're stuck in a cycle of all-or-nothing thinking.</li>
+        <li class="closing">And you're ready for something different.<br>Something softer. Something sustainable.</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="imagine-card">
+        <h3>Imagine <em>feeling...</em></h3>
+        <ul class="imagine-list">
+          <li>
+            <div class="imagine-check">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <path d="M2 5l2 2 4-4" stroke="#7D9E78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            Consistent without forcing it
+          </li>
+          <li>
+            <div class="imagine-check">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <path d="M2 5l2 2 4-4" stroke="#7D9E78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            Confident in your habits
+          </li>
+          <li>
+            <div class="imagine-check">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <path d="M2 5l2 2 4-4" stroke="#7D9E78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            Calm in your body
+          </li>
+          <li>
+            <div class="imagine-check">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <path d="M2 5l2 2 4-4" stroke="#7D9E78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            Proud of your progress
+          </li>
+          <li>
+            <div class="imagine-check">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <path d="M2 5l2 2 4-4" stroke="#7D9E78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            Free from guilt and self-criticism
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included">
+  <div class="section-header">
+    <p class="eyebrow">The 6-Week Program</p>
+    <h2 class="section-title">Everything you need to build <em>lasting change.</em></h2>
+  </div>
+
+  <div class="included-grid">
+    <div class="inc-card">
+      <div class="inc-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="8" r="4" stroke="#7D9E78" stroke-width="1.5"/>
+          <path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#7D9E78" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3 class="inc-title">Weekly 1:1 Sessions</h3>
+      <p class="inc-body">45–60 minute coaching conversations focused on mindset, habits, and emotional wellbeing. Gentle, supportive, and entirely focused on you.</p>
+    </div>
+
+    <div class="inc-card">
+      <div class="inc-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" stroke="#7D9E78" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="inc-title">Personalised Habit Strategy</h3>
+      <p class="inc-body">We create simple, realistic routines that fit your life — not the other way around. No cookie-cutter plans.</p>
+    </div>
+
+    <div class="inc-card">
+      <div class="inc-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#7D9E78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="inc-title">Voxer / Text Support</h3>
+      <p class="inc-body">Support between sessions so you never feel alone. I'm here for questions, encouragement, and the moments when life gets messy.</p>
+    </div>
+  </div>
+
+  <div class="included-row-2">
+    <div class="inc-card">
+      <div class="inc-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M9 11l3 3L22 4" stroke="#7D9E78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="#7D9E78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="inc-title">Weekly Check-Ins</h3>
+      <p class="inc-body">Compassionate accountability that keeps you moving forward — without the pressure or stress.</p>
+    </div>
+
+    <div class="inc-card">
+      <div class="inc-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="#7D9E78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="#7D9E78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 class="inc-title">Tools & Resources</h3>
+      <p class="inc-body">Mindset prompts, habit trackers, reflection exercises, and personalised guidance to support your journey.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION -->
+<section class="transformation">
+  <div class="transformation-inner">
+    <div class="section-header" style="margin: 0 auto 52px; text-align: center;">
+      <p class="eyebrow">Your Transformation</p>
+      <h2 class="section-title" style="margin-bottom: 0;">The shift that changes everything.</h2>
+    </div>
+
+    <div class="transformation-grid">
+
+      <div class="trans-card trans-card-now">
+        <p class="trans-label">Where you are now</p>
+        <ul class="trans-list">
+          <li>
+            <div class="trans-icon trans-icon-x">✕</div>
+            Overwhelmed
+          </li>
+          <li>
+            <div class="trans-icon trans-icon-x">✕</div>
+            Inconsistent
+          </li>
+          <li>
+            <div class="trans-icon trans-icon-x">✕</div>
+            Guilty
+          </li>
+          <li>
+            <div class="trans-icon trans-icon-x">✕</div>
+            Perfectionistic
+          </li>
+          <li>
+            <div class="trans-icon trans-icon-x">✕</div>
+            Burnt out
+          </li>
+        </ul>
+      </div>
+
+      <div class="trans-card trans-card-future">
+        <p class="trans-label">Where you're going</p>
+        <ul class="trans-list">
+          <li>
+            <div class="trans-icon trans-icon-check">✓</div>
+            Grounded
+          </li>
+          <li>
+            <div class="trans-icon trans-icon-check">✓</div>
+            Confident
+          </li>
+          <li>
+            <div class="trans-icon trans-icon-check">✓</div>
+            Empowered
+          </li>
+          <li>
+            <div class="trans-icon trans-icon-check">✓</div>
+            Compassionate
+          </li>
+          <li>
+            <div class="trans-icon trans-icon-check">✓</div>
+            Balanced
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT -->
+<section class="investment">
+  <p class="eyebrow">Investment</p>
+  <h2 class="section-title" style="max-width: 480px; margin: 0 auto 10px;">6-Week Coaching Program</h2>
+  <div class="investment-price">$250 – $450 AUD</div>
+  <p class="investment-sub">Choose the investment tier that feels right for you.</p>
+  <p class="investment-note">Payment plans available.</p>
+  <a href="#booking" class="btn-primary">Book your free Clarity Session</a>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="booking-inner">
+    <p class="eyebrow">Book Your Free Clarity Session</p>
+    <h2 class="section-title">One gentle step forward.</h2>
+    <p class="body-text" style="text-align: center; max-width: 480px; margin: 0 auto;">A supportive, zero-pressure conversation to explore what's keeping you stuck — and what's possible next. Free. 30 minutes. Online.</p>
+
+    <div class="booking-embed">
+      <p class="booking-embed-title">Booking calendar coming soon</p>
+      <p class="booking-embed-sub">In the meantime, reach out at hello@championchangehwc.com</p>
+      <a href="mailto:hello@championchangehwc.com" class="btn-amber-outline">Email Caoilfhionn</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-header" style="margin-bottom: 56px;">
+    <p class="eyebrow">Kind Words</p>
+    <h2 class="section-title">Women who've <em>made the shift</em></h2>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="t-card">
+      <div class="t-quote">"</div>
+      <p class="t-text">Working with Caoilfhionn helped me break the cycle I'd been stuck in for years.</p>
+      <div class="t-name">Client Name</div>
+    </div>
+    <div class="t-card">
+      <div class="t-quote">"</div>
+      <p class="t-text">For the first time, I feel consistent — without forcing it.</p>
+      <div class="t-name">Client Name</div>
+    </div>
+    <div class="t-card">
+      <div class="t-quote">"</div>
+      <p class="t-text">This coaching changed how I see myself.</p>
+      <div class="t-name">Client Name</div>
+    </div>
+  </div>
+
+  <p class="testimonials-note">(Real testimonials will be added as they come in.)</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-l1">Champion</div>
+      <div class="footer-logo-l2">Change</div>
+      <p class="footer-tagline">Health & Wellness Coaching for high-achieving women ready to build consistent, guilt-free habits.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work-with-me.html">Work With Me</a></li>
+        <li><a href="#booking">Book your free Clarity Session</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://instagram.com/championchangehwc" target="_blank">@championchangehwc</a></li>
+        <li><a href="mailto:hello@championchangehwc.com">hello@championchangehwc.com</a></li>
+        <li><a href="#booking">Free Clarity Session</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Champion Change. All rights reserved.</span>
+    <span>championchangehwc.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
